@@ -26,13 +26,12 @@ fun JobListedCard(
     onClick: () -> Unit,
 
     ) {
-    val navController = rememberNavController()
 
 
     Card(
         modifier = modifier
             .size(width = 170.dp, height = 186.dp)
-            .padding(start = 20.dp),
+            .padding(end = 20.dp),
 
         shape = RoundedCornerShape(12.dp),
 

@@ -11,6 +11,6 @@ val Teal200 = Color(0xFF03DAC5)
 
 val BgColor = Color(0xFFF6F7F9)
 val White = Color(0xFFFFFFFF)
-val ButtonBg = Color(0xFFA4DCC6)
+val ButtonBg = Color(0xff66dbfc)
 val PrimaryTextColor = Color(0xFFB7CBBF)
 val Black = Color(0xFF000000)

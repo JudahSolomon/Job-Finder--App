@@ -3,9 +3,11 @@ package com.example.jobfinder_app.Screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,33 +16,46 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.example.jobfinder_app.Components.JobListedCard
 import com.example.jobfinder_app.Components.SearchBar
-import com.example.jobfinder_app.Navigation.ScreenNavigation.SoftwareEngineer
-import com.example.jobfinder_app.Navigation.ScreenNavigation.UiUxDesigner
+import com.example.jobfinder_app.Navigation.HomeScreenBottomNav
 import com.example.jobfinder_app.R
 import com.example.jobfinder_app.ui.theme.BgColor
 import com.example.jobfinder_app.ui.theme.Black
 import com.example.jobfinder_app.ui.theme.PrimaryTextColor
 import com.example.jobfinder_app.ui.theme.White
 
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenUI() {
+
+    Scaffold(
+        content = {
+            LazyColumn (){
+                item {
+                    HomeScreen()
+                }
+            }
+        },
+        bottomBar = {
+            HomeScreenBottomNav()
+        }
+    )
+}
+
 
 @Composable
-fun HomeScreen(navController: NavController) {
-
-    val navController = rememberNavController()
-
+fun HomeScreen() {
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(BgColor)
-            .padding(start = 20.dp, bottom = 100.dp)
-            .padding(top = 30.dp)
+            .padding(start = 20.dp, bottom = 10.dp)
+            .padding(top = 0.dp)
     ) {
 
         Box(modifier = Modifier.fillMaxWidth())
@@ -58,13 +73,13 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(
-                        text = "Good Jobs",
-                        fontSize = 30.sp,
+                        text = "Get Jobs",
+                        fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.Black
                     )
                     Text(
-                        text = "Have a nice day!",
+                        text = "Hello Kim",
                         fontSize = 17.sp,
                         fontWeight = FontWeight.Normal,
                         color = Black
@@ -74,10 +89,10 @@ fun HomeScreen(navController: NavController) {
                 }
 
                 Image(
-                    painter = painterResource(id = R.drawable.character1),
+                    painter = painterResource(id = R.drawable.job_search),
                     contentDescription = null,
                     modifier = Modifier
-                        .size(height = 250.dp, width = 300.dp)
+                        .size(height = 280.dp, width = 300.dp)
                         .weight(2f),
                     contentScale = ContentScale.Crop,
 
@@ -85,7 +100,7 @@ fun HomeScreen(navController: NavController) {
             }
 
             SearchBar(
-                text = "Find your dream is come true",
+                text = "Find your dream job",
                 modifier = Modifier.padding(top = 210.dp, end = 20.dp)
             )
 
@@ -105,7 +120,6 @@ fun HomeScreen(navController: NavController) {
             )
 
             LazyRow(
-                modifier = Modifier,
 
                 ) {
                 item {
@@ -115,7 +129,7 @@ fun HomeScreen(navController: NavController) {
                         "Design",
                         "213 results",
                         onClick = {
-                            navController.navigate(route = UiUxDesigner.route)
+
 
                         }
                     )
@@ -126,15 +140,17 @@ fun HomeScreen(navController: NavController) {
                                 "Engineer", "Engineering",
                         "628 results",
                         onClick = {
-                            navController.navigate(route = SoftwareEngineer.route)
+
 
                         }
                     )
                 }
                 item {
+
                     JobListedCard(
-                        "Telephone\n Sale", "Finance",
-                        "421 results",
+//                        modifier = Modifier.padding(start = 20.dp),
+                        text = "Sale", job = "Finance",
+                        results = "421 results",
                         onClick = {
 
 
@@ -144,8 +160,9 @@ fun HomeScreen(navController: NavController) {
 
                 item {
                     JobListedCard(
-                        "Graphic\n Designer", "Designer",
-                        "358 results",
+//                        modifier = Modifier.padding(start = 20.dp),
+                        job = "Graphic\n Designer", text = "Designer",
+                        results = "358 results",
                         onClick = {
 
                         }
@@ -159,7 +176,7 @@ fun HomeScreen(navController: NavController) {
                 fontSize = 15.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = Color.Black,
-                modifier = Modifier.padding(top = 20.dp)
+                modifier = Modifier.padding(top = 10.dp)
             )
 
         }
@@ -168,7 +185,7 @@ fun HomeScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(170.dp)
-                .padding(top = 20.dp, bottom = 0.dp)
+                .padding(end = 20.dp,)
                 .background(White),
             shape = RoundedCornerShape(12.dp),
             elevation = 6.dp
@@ -192,7 +209,7 @@ fun HomeScreen(navController: NavController) {
                         fontSize = 23.sp,
                         fontWeight = FontWeight.ExtraBold,
                         color = Color.Black,
-                        modifier = Modifier.padding(top = 20.dp)
+                        modifier = Modifier.padding(top = 10.dp)
                     )
 
                     Text(
@@ -200,7 +217,7 @@ fun HomeScreen(navController: NavController) {
                         fontSize = 13.sp,
                         fontWeight = FontWeight.Normal,
                         color = PrimaryTextColor,
-                        modifier = Modifier.padding(top = 30.dp)
+                        modifier = Modifier.padding(top = 10.dp)
                     )
 
                 }
@@ -210,7 +227,11 @@ fun HomeScreen(navController: NavController) {
                 Image(
                     painter = painterResource(id = R.drawable.character2),
                     contentDescription = null,
-                    modifier = Modifier.size(height = 600.dp, width = 300.dp),
+                    modifier = Modifier
+                        .size(
+                            height = 600.dp,
+                            width = 300.dp
+                        ),
                     contentScale = ContentScale.FillHeight
                 )
             }

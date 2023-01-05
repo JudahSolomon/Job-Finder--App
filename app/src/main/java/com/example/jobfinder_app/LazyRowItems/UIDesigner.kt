@@ -31,7 +31,7 @@ fun UIDesigner() {
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(400.dp)
+                .height(500.dp)
                 .background(White),
             shape = RoundedCornerShape(20.dp),
             elevation = 5.dp
@@ -41,6 +41,7 @@ fun UIDesigner() {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
                     .fillMaxWidth()
+                    .height(50.dp)
                     .padding(horizontal = 20.dp)
                     .padding(top = 30.dp)
 
@@ -50,20 +51,22 @@ fun UIDesigner() {
                     fontSize = 32.sp,
                     fontWeight = FontWeight.ExtraBold,
                     color = Black,
+                    modifier = Modifier.weight(3f)
                 )
 
                 Image(
                     painter = painterResource(id = R.drawable.spotify_logo),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
-                    modifier = Modifier.size(60.dp)
+                    modifier = Modifier.size(50.dp)
+
                 )
 
 
             }
 
             Row(
-                verticalAlignment = Alignment.Top,
+                horizontalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 20.dp)
@@ -77,7 +80,8 @@ fun UIDesigner() {
                     fontSize = 13.sp,
                     fontWeight = FontWeight.Bold,
                     color = Black,
-                    modifier = Modifier.padding(start = 20.dp, top = 20.dp, end = 80.dp)
+                    modifier = Modifier.padding(start = 20.dp,
+                        top = 20.dp, end = 80.dp)
                 )
 
 
@@ -86,14 +90,15 @@ fun UIDesigner() {
                     contentDescription = null,
                     tint = PrimaryTextColor,
                     modifier = Modifier
-                        .size(60.dp)
-                        .padding(top = 20.dp)
+                        .size(40.dp)
+                        .padding(top = 0.dp)
                 )
             }
 
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .height(200.dp)
                     .padding(horizontal = 20.dp)
                     .padding(top = 220.dp, bottom = 30.dp),
                 shape = RoundedCornerShape(12.dp),
@@ -131,9 +136,24 @@ fun UIDesigner() {
                         )
                 }
 
+
             }
 
+
+
+//
+//            Text(
+//                text = "Apply",
+//                fontSize = 14.sp,
+//                fontWeight = FontWeight.Bold,
+//                color = Black,
+//                modifier = Modifier.padding(top = 500.dp)
+//            )
+
         }
+
+
+
 
         Column(
 
@@ -141,8 +161,8 @@ fun UIDesigner() {
                 .fillMaxWidth()
                 .padding(
                     horizontal = 30.dp,
-                    vertical = 20.dp,
-                ),
+                )
+                .padding(top =100.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
