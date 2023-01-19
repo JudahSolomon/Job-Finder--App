@@ -3,8 +3,8 @@ This is a Job Finder App 80% Completed with some few touches to be done, complet
 # TODO:
  complete Message, Like, and Profile pages as well as LazyRow Pages content
 
-#DONE:
+# DONE:
  Bottom Navigation Added
+# Screenshot:
+![Screenshot_20230119_030512](https://user-images.githubusercontent.com/85334813/213479391-55144677-85a8-4990-bc98-8b249da8c139.png)
 
-![finder1](https://user-images.githubusercontent.com/85334813/210680074-3d9fec9c-e96c-49f2-81f4-65081a157132.png)
-![finder2](https://user-images.githubusercontent.com/85334813/210680078-d2fa14d2-848a-42a9-8b8f-d932b34413c7.png)
